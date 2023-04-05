@@ -35,27 +35,79 @@ namespace MainluWeb
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var url = webView21.Source = new Uri("https://sites.google.com/view/alsoftp/inicio");
-            toolStripTextBox1.Text = url.AbsoluteUri.ToString();
+            toolStripTextBox1.Text = webView21.CoreWebView2.Source.ToString();
+            if (googleToolStripMenuItem.Checked == true)
+            {
+                webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + toolStripTextBox1.Text.ToString());
+            }
+
+            if (bingToolStripMenuItem.Checked == true)
+            {
+                webView21.CoreWebView2.Navigate("https://www.bing.com/search?q=" + toolStripTextBox1.Text.ToString());
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            webView21.Source = new Uri("https://sites.google.com/view/alsoftp/inicio");
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            webView21.CoreWebView2.Navigate("https://www.bing.com/search?q=" + toolStripTextBox1.ToString());
-            if (toolStripTextBox1.ToolTipText == "")
+            if (googleToolStripMenuItem.Checked == true)
             {
-                webView21.Source = new Uri("https://sites.google.com/view/alsoftp/inicio");
+                webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + toolStripTextBox1.Text.ToString());
+            }
+
+            if (bingToolStripMenuItem.Checked == true)
+            {
+                webView21.CoreWebView2.Navigate("https://www.bing.com/search?q=" + toolStripTextBox1.Text.ToString());
             }
         }
 
-        private void Form1_MaximumSizeChanged(object sender, EventArgs e)
+        private void toolStripButton5_ButtonClick(object sender, EventArgs e)
         {
-            //There's nothing to code here.
+            
+            if (googleToolStripMenuItem.Checked == true)
+            {
+                webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + toolStripTextBox1.Text.ToString());
+            }
+
+            if (bingToolStripMenuItem.Checked == true)
+            {
+                webView21.CoreWebView2.Navigate("https://www.bing.com/search?q=" + toolStripTextBox1.Text.ToString());
+            }
+            if (toolStripTextBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Escriba una página web porfavor.");
+            }
+        }
+
+        private void bingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bingToolStripMenuItem.Checked = true;
+            if (bingToolStripMenuItem.Checked)
+            {
+                googleToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void googleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            googleToolStripMenuItem.Checked = true;
+            if (googleToolStripMenuItem.Checked)
+            {
+                bingToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void webView21_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+            var title = webView21.CoreWebView2.DocumentTitle;
+            this.Text = title + " - Mainlu";
+
+            toolStripTextBox1.Text = webView21.CoreWebView2.Source;
+
+            if (toolStripTextBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Escriba una página web porfavor.");
+            }
+
         }
     }
 }

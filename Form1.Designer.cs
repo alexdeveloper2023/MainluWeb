@@ -36,9 +36,14 @@ namespace MainluWeb
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.configuracion = new System.Windows.Forms.ToolStripSplitButton();
+            this.extensionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRXIMAMENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.motorDeBusquedaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.googleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
@@ -53,12 +58,12 @@ namespace MainluWeb
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton4,
-            this.toolStripButton5,
             this.toolStripTextBox1,
-            this.toolStripSeparator2});
+            this.configuracion,
+            this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(2068, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1231, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -108,30 +113,82 @@ namespace MainluWeb
             this.toolStripButton4.ToolTipText = "Buscar";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(46, 22);
-            this.toolStripButton5.Text = "Buscar";
-            this.toolStripButton5.ToolTipText = "Buscar";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.MaxLength = 9999999;
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(1779, 25);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(335, 25);
             this.toolStripTextBox1.ToolTipText = "Buscar";
             // 
-            // toolStripSeparator2
+            // configuracion
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.configuracion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.configuracion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.configuracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.extensionesToolStripMenuItem,
+            this.motorDeBusquedaToolStripMenuItem});
+            this.configuracion.Image = ((System.Drawing.Image)(resources.GetObject("configuracion.Image")));
+            this.configuracion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.configuracion.Name = "configuracion";
+            this.configuracion.Size = new System.Drawing.Size(99, 22);
+            this.configuracion.Text = "Configuración";
+            this.configuracion.ToolTipText = "Buscar";
+            // 
+            // extensionesToolStripMenuItem
+            // 
+            this.extensionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pRXIMAMENTEToolStripMenuItem});
+            this.extensionesToolStripMenuItem.Name = "extensionesToolStripMenuItem";
+            this.extensionesToolStripMenuItem.ShowShortcutKeys = false;
+            this.extensionesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.extensionesToolStripMenuItem.Text = "Extensiones";
+            // 
+            // pRXIMAMENTEToolStripMenuItem
+            // 
+            this.pRXIMAMENTEToolStripMenuItem.Enabled = false;
+            this.pRXIMAMENTEToolStripMenuItem.Name = "pRXIMAMENTEToolStripMenuItem";
+            this.pRXIMAMENTEToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.pRXIMAMENTEToolStripMenuItem.Text = "PROXIMAMENTE";
+            // 
+            // motorDeBusquedaToolStripMenuItem
+            // 
+            this.motorDeBusquedaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bingToolStripMenuItem,
+            this.googleToolStripMenuItem});
+            this.motorDeBusquedaToolStripMenuItem.Name = "motorDeBusquedaToolStripMenuItem";
+            this.motorDeBusquedaToolStripMenuItem.ShowShortcutKeys = false;
+            this.motorDeBusquedaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.motorDeBusquedaToolStripMenuItem.Text = "Motor de busqueda";
+            // 
+            // bingToolStripMenuItem
+            // 
+            this.bingToolStripMenuItem.Name = "bingToolStripMenuItem";
+            this.bingToolStripMenuItem.ShowShortcutKeys = false;
+            this.bingToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.bingToolStripMenuItem.Text = "Bing";
+            this.bingToolStripMenuItem.Click += new System.EventHandler(this.bingToolStripMenuItem_Click);
+            // 
+            // googleToolStripMenuItem
+            // 
+            this.googleToolStripMenuItem.Checked = true;
+            this.googleToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.googleToolStripMenuItem.Name = "googleToolStripMenuItem";
+            this.googleToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.googleToolStripMenuItem.Text = "Google";
+            this.googleToolStripMenuItem.Click += new System.EventHandler(this.googleToolStripMenuItem_Click);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton6.Text = "Buscar";
+            this.toolStripButton6.ToolTipText = "Buscar";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton5_ButtonClick);
             // 
             // webView21
             // 
@@ -141,22 +198,22 @@ namespace MainluWeb
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webView21.Location = new System.Drawing.Point(0, 25);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(2068, 938);
-            this.webView21.Source = new System.Uri("https://sites.google.com/view/alsoftp/inicio", System.UriKind.Absolute);
+            this.webView21.Size = new System.Drawing.Size(1231, 859);
+            this.webView21.Source = new System.Uri("https://www.google.com", System.UriKind.Absolute);
             this.webView21.TabIndex = 3;
             this.webView21.ZoomFactor = 1D;
+            this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2068, 963);
+            this.ClientSize = new System.Drawing.Size(1231, 884);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "MainluWeb";
-            this.MaximumSizeChanged += new System.EventHandler(this.Form1_MaximumSizeChanged);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -174,9 +231,14 @@ namespace MainluWeb
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         public System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripSplitButton configuracion;
+        private System.Windows.Forms.ToolStripMenuItem extensionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRXIMAMENTEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem motorDeBusquedaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem googleToolStripMenuItem;
     }
 }
