@@ -199,10 +199,8 @@ namespace MainluWeb
             this.webView21.Location = new System.Drawing.Point(0, 25);
             this.webView21.Name = "webView21";
             this.webView21.Size = new System.Drawing.Size(1231, 859);
-            this.webView21.Source = new System.Uri("https://www.google.com", System.UriKind.Absolute);
-            this.webView21.TabIndex = 3;
+            this.webView21.TabIndex = 1;
             this.webView21.ZoomFactor = 1D;
-            this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
             // 
             // Form1
             // 
@@ -231,7 +229,6 @@ namespace MainluWeb
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         public System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSplitButton configuracion;
@@ -240,5 +237,6 @@ namespace MainluWeb
         private System.Windows.Forms.ToolStripMenuItem motorDeBusquedaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem googleToolStripMenuItem;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }

@@ -4,15 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace MainluWeb
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace MainluWeb
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            toolStripTextBox1.Text = webView21.CoreWebView2.Source.ToString();
+            webView21.Source = new Uri("https://www.google.com");
             if (googleToolStripMenuItem.Checked == true)
             {
                 webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + toolStripTextBox1.Text.ToString());
@@ -62,7 +65,7 @@ namespace MainluWeb
 
         private void toolStripButton5_ButtonClick(object sender, EventArgs e)
         {
-            
+
             if (googleToolStripMenuItem.Checked == true)
             {
                 webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + toolStripTextBox1.Text.ToString());
@@ -74,7 +77,7 @@ namespace MainluWeb
             }
             if (toolStripTextBox1.Text == string.Empty)
             {
-                MessageBox.Show("Escriba una página web porfavor.");
+                
             }
         }
 
@@ -100,12 +103,11 @@ namespace MainluWeb
         {
             var title = webView21.CoreWebView2.DocumentTitle;
             this.Text = title + " - Mainlu";
-
             toolStripTextBox1.Text = webView21.CoreWebView2.Source;
 
             if (toolStripTextBox1.Text == string.Empty)
             {
-                MessageBox.Show("Escriba una página web porfavor.");
+                
             }
 
         }
